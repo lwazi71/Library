@@ -8,7 +8,26 @@
     
 </head>
 <body>
-    <div id="slideContainer"></div>
+    <div id="slideContainer">
+    </div>
+    <div class = 'openBtn'>
+        <button class = "openButton" onclick ="openForm()"><strong>New Book</strong></button>
+    </div>
+    <div class = "loginPopup">
+        <div class = "bookPopup" id = "bookForm">
+            <form action = "/action_page.php" class = "formContainer">
+                <h2>New Book</h2>
+                <label for = "Title">
+                    <strong>Title</strong>
+                </label>
+                <input type = "text" id = "title" required>
+                <label for = "Author">
+                    <strong>Author</strong>
+                </label>
+                <input type = "text" id ="author" required>
+            </form>
+        </div>
+    </div>
     <script src = "library.js" defer></script>
 </body>
 </html>
