@@ -5,13 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Library</title>
+    <link rel = "stylesheet" href="style.css">
     
 </head>
 <body>
     <div id="slideContainer">
     </div>
     <div class = 'openBtn'>
-        <button class = "openButton" onclick ="openForm()"><strong>New Book</strong></button>
+        <button class = "openButton" onclick ="addBook()"><strong>New Book</strong></button>
     </div>
     <div class = "loginPopup">
         <div class = "bookPopup" id = "bookForm">
@@ -25,6 +26,13 @@
                     <strong>Author</strong>
                 </label>
                 <input type = "text" id ="author" required>
+                <label for = "Page Count">
+                    <strong>Page Count</strong>
+                </label>
+                <input type = "text" id = "page-count" required>
+               <strong>Read Status</strong> <input type = "checkbox" name="Read Status" id="status" value = "read status">
+                <button type = "submit" class = "btn submit">Submit</button>
+                <button type = "button" class = "btn cancel" onclick = "closeBook()">Close</button>
             </form>
         </div>
     </div>

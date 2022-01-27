@@ -1,5 +1,7 @@
 const newBook = document.querySelector('.new-book');
+
 let myLibrary = ["Name of Wind", "Wise Man Fear", "Can't Hurt Me", "Subtle art of not giving a fuck"];
+
 var str = '<ul>'
 function Book(title,author,pages,isRead){
      this.title = title;
@@ -18,3 +20,10 @@ myLibrary.forEach(function(myLibrary){
 });
 str += '</ul>';
 document.getElementById("slideContainer").innerHTML = str;
+
+function addBook(){
+    document.getElementById("bookForm").style.display = "block";
+}
+function closeBook() {
+    document.getElementById("bookForm").style.display = "none";
+}
