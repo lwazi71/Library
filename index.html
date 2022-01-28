@@ -9,14 +9,12 @@
     
 </head>
 <body>
-    <div id="slideContainer">
-    </div>
     <div class = 'openBtn'>
         <button class = "openButton" onclick ="addBook()"><strong>New Book</strong></button>
     </div>
     <div class = "loginPopup">
         <div class = "bookPopup" id = "bookForm">
-            <form action = "/action_page.php" class = "formContainer">
+            <form onsubmit="return false;" class = "formContainer">
                 <h2>New Book</h2>
                 <label for = "Title">
                     <strong>Title</strong>
@@ -35,6 +33,11 @@
                 <button type = "button" class = "btn cancel" onclick = "closeBook()">Close</button>
             </form>
         </div>
+    </div>
+    <div>
+        <p id = "p1"></p>
+        <p id = "p2"></p>
+        <p id = "p3"></p>
     </div>
     <script src = "library.js" defer></script>
 </body>
