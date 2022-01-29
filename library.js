@@ -1,5 +1,6 @@
 const newBook = document.querySelector('.new-book');
-const bookSumbit = document.querySelector(".submit")
+const bookSumbit = document.querySelector(".submit");
+document.querySelector(".bookValues").style.display = "none";
 let myLibrary = [];
 
 function Book(title,author,pages,isRead){
@@ -27,4 +28,5 @@ bookSumbit.addEventListener('click', () => {
     document.getElementById("p1").innerHTML = strText1;
     document.getElementById("p2").innerHTML = strText2;
     document.getElementById("p3").innerHTML = strText3;
+    document.querySelector(".bookValues").style.display = "block";
 })
