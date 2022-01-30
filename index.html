@@ -10,11 +10,11 @@
 </head>
 <body>
     <div class = 'openBtn'>
-        <button class = "openButton" onclick ="addBook()"><strong>New Book</strong></button>
+        <button class = "openButton"><strong>New Book</strong></button>
     </div>
     <div class = "loginPopup">
         <div class = "bookPopup" id = "bookForm">
-            <form onsubmit="return false;" class = "formContainer">
+            <form onsubmit="return false;" name = "books" class = "formContainer">
                 <h2>New Book</h2>
                 <label for = "Title">
                     <strong>Title</strong>
@@ -28,7 +28,12 @@
                     <strong>Page Count</strong>
                 </label>
                 <input type = "text" id = "page-count" required>
-               <strong>Read Status</strong> <input type = "checkbox" name="Read Status" id="status" value = "read status">
+               <strong>Read Status</strong> 
+                <select class = "status">
+                    <option>Read</option>
+                    <option>In progress</option>
+                    <option>Not Read</option>
+                </select>
                 <button type = "submit" class = "btn submit">Submit</button>
                 <button type = "button" class = "btn cancel" onclick = "closeBook()">Close</button>
             </form>
@@ -39,6 +44,7 @@
         <p id = "p1"></p>
         <p id = "p2"></p>
         <p id = "p3"></p>
+        <p id = "p4"></p>
         </div>
     </div>
     <script src = "library.js" defer></script>
