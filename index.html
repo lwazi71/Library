@@ -15,27 +15,30 @@
     <div class = "loginPopup">
         <div class = "bookPopup" id = "bookForm">
             <form onsubmit="return false;" name = "books" class = "formContainer">
-                <h2>New Book</h2>
+                <h2 class = 'heading-book'>New Book</h2>
+                <div class = "cancel" onclick = "closeBook()">+</div>
                 <label for = "Title">
-                    <strong>Title</strong>
+                    <strong>Title:</strong>
                 </label>
                 <input type = "text" id = "title" required>
+                <br>
                 <label for = "Author">
-                    <strong>Author</strong>
+                    <strong>Author:</strong>
                 </label>
                 <input type = "text" id ="author" required>
+                <br>
                 <label for = "Page Count">
-                    <strong>Page Count</strong>
+                    <strong>Number of Pages: </strong>
                 </label>
                 <input type = "text" id = "page-count" required>
-               <strong>Read Status</strong> 
+                <br>
+               <strong>Read Status: </strong> 
                 <select class = "status">
                     <option>Read</option>
                     <option>In progress</option>
                     <option>Not Read</option>
                 </select>
                 <button type = "submit" class = "btn submit">Submit</button>
-                <button type = "button" class = "btn cancel" onclick = "closeBook()">Close</button>
             </form>
         </div>
     </div>

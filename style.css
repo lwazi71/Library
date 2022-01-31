@@ -19,14 +19,19 @@
     text-align: center;
     width: 100%;
 }
+.heading-book{
+    font-size:36px;
+    color:#2185d5;
+}
 .bookPopup{
     display: none;
     position: fixed;
     left: 45%;
     top: 5%;
     transform: translate(-50%, 5%);
-    border: 3px solid #999999;
+    border: 2px solid;
     z-index: 9;
+    border-radius:10px;
 }
 .formContainer {
     max-width: 300px;
@@ -35,11 +40,13 @@
 }
   .formContainer input[type=text],
   .formContainer input[type=password] {
-    width: 100%;
-    padding: 15px;
-    margin: 5px 0 20px 0;
-    border: none;
-    background: #eee;
+    display: block;
+    width:100%;
+    padding:1rem;
+    border:0;
+    background: #f7f7f7;
+    font-size:1rem;
+    outline:0;
 }
   .formContainer input[type=text]:focus,
   .formContainer input[type=password]:focus {
@@ -49,15 +56,22 @@
   .formContainer .btn {
     padding: 12px 20px;
     border: none;
-    background-color: #8ebf42;
+    background-color: #2185d5;
     color: #fff;
     cursor: pointer;
     width: 100%;
+    margin-top: 15px;
     margin-bottom: 15px;
     opacity: 0.8;
 }
-  .formContainer .cancel {
-    background-color: #cc0000;
+.cancel{
+    font-size:3rem;
+    position:absolute;
+    top:0;
+    right:10px;
+    transform:rotate(45deg);
+    cursor:pointer;
+    color:#2185d5;
 }
   .formContainer .btn:hover,
   .openButton:hover {
@@ -75,4 +89,13 @@
     padding:30px;
     border:2px solid black;
     border-radius:3px;
+}
+.status{
+    display:block;
+    width:100%;
+    padding:1rem;
+    border:0;
+    background:#f7f7f7;
+    font-size: 1rem;
+    outline:0;
 }
