@@ -6,10 +6,28 @@ const bookAuthor = document.getElementById("author");
 const bookPages = document.getElementById("page-count");
 const bookOptions = document.querySelector('.status');
 const openButton = document.querySelector(".openButton");
-const para1 =  document.getElementById("p1");
-const para2 = document.getElementById("p2");
-const para3 = document.getElementById("p3");
-const para4 = document.getElementById("p4");
+const bookValues = document.querySelector(".bookValues");
+
+var para1 = document.createElement("p");
+var para1Text = document.createTextNode("Title:");
+para1.appendChild(para1Text);
+bookValues.appendChild(para1);
+
+var para2 = document.createElement("p");
+var para2Text = document.createTextNode("Author:");
+para2.appendChild(para2Text);
+bookValues.appendChild(para2);
+
+var para3 = document.createElement("p");
+var para3Text = document.createTextNode("Pages:");
+para3.appendChild(para3Text);
+bookValues.appendChild(para3);
+
+var para4= document.createElement("p");
+var para4Text = document.createTextNode("Status:");
+para4.appendChild(para4Text);
+bookValues.appendChild(para4);
+
 
 document.querySelector(".bookValues").style.display = "none";
 
