@@ -1,4 +1,3 @@
-let myLibrary = [];
 const newBook = document.querySelector('.new-book');
 const bookSumbit = document.querySelector(".submit");
 const bookTitle = document.getElementById("title");
@@ -11,7 +10,24 @@ const bookOutline = document.querySelector(".book");
 const bookDelete = document.querySelector(".delete");
 const individualBook = document.querySelector(".book");
 const bookForm = document.getElementById("bookForm");
-bookValues.style.display = "none";
+
+window.onload = function() {
+    bookValues.style.display = "none";
+}
+const closeBook = () => {
+    bookForm.style.display = "none";
+};
+const openBook = () => {
+    bookForm.style.display = "block";
+    const cancel = document.querySelector(".cancel");
+    cancel.addEventListener("click", (e) => {
+        e.preventDefault();
+        closeBook();
+    })
+};
+newBook.addEventListener("click",openBook);
+
+let myLibrary = [];
 
 var para1 = document.createElement("p");
 var para1Text = document.createTextNode("Title:");
@@ -31,11 +47,10 @@ para3.appendChild(para3Text);
 para3.classList.add('para-pages')
 bookOutline.appendChild(para3);
 
-var para4= document.createElement("p");
+var para4 = document.createElement("p");
 var para4Text = document.createTextNode("Status:");
 para4.appendChild(para4Text);
 bookOutline.appendChild(para4);
-
 
 function Book(title,author,pages,read){
      this.title = title;
@@ -46,29 +61,22 @@ function Book(title,author,pages,read){
          return this.title + " written by " + this.author + " has " + this.pages + " pages " + isRead;
      }
 }
+
+bookSumbit.addEventListener("click", addBooktoLibrary);
+
 function addBooktoLibrary(){
-    if (bookTitle.value && bookAuthor.value && bookPages.value && bookOptions.value){
-        myLibrary.push(new Book(bookTitle.value, bookAuthor.value, bookPages.value, bookOptions.value))
-    } else{
-        alert("Please enter all information")
-    }
-    console.log(myLibrary)
-}
-openButton.addEventListener('click',() => {
-    bookForm.style.display = "block";
-})
-function closeBook() {
-    bookForm.style.display = "none";
-}
-bookSumbit.addEventListener('click', () => {
     para1.innerHTML += bookTitle.value;
     para2.innerHTML += bookAuthor.value;
     para3.innerHTML += bookPages.value;
     para4.innerHTML += bookOptions.value;
+    let newBook = new Book(bookTitle.value, bookAuthor.value,bookPages.value,bookOptions.value);
+    myLibrary.push(newBook);
     bookValues.style.display = "block";
-})
+    console.log(myLibrary)
+}
+bookSumbit.addEventListener("click", addBooktoLibrary);
+
 bookDelete.addEventListener("click", function(e){
     e.target.parentNode.remove()
     bookValues.style.display = "none";
-    
 })

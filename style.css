@@ -86,7 +86,7 @@ body{
     display: flex;
     flex-direction: row;
     flex-wrap:wrap;
-    max-width: 1000;
+    max-width: 1000px;
     position:absolute;
     top:12%;
     left:15%;
@@ -117,12 +117,12 @@ body{
 }
 p{
     display:block;
-    font-size:1.5rem;
+    font-size:1.2rem;
     font-weight:bold;
 }
 .para-title{
-    position:absolute;
-    bottom:344px;
+    position:relative;
+    bottom:22px;
 }
 .delete{
     position:relative;
