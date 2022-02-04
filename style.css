@@ -1,3 +1,8 @@
+body{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
 *{
     box-sizing: border-box;
 }
@@ -77,18 +82,19 @@
   .openButton:hover {
     opacity: 1;
 }
-.books-grid{
-    display: grid;
-    margin-top:70px;
-}
 .bookValues{
-    display:flex;
-    flex-direction: column;
-    gap:30px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap:wrap;
+    max-width: 1000;
+    position:absolute;
+    top:12%;
+    left:15%;
+    margin:2rem;
     text-align:center;
     padding:30px;
-    border:2px solid black;
     border-radius:3px;
+    border:2px solid black;
 }
 .status{
     display:block;
@@ -98,4 +104,31 @@
     background:#f7f7f7;
     font-size: 1rem;
     outline:0;
+}
+.book {
+   width:175px;
+   height:300px;
+   border-radius:5px;
+   margin:2rem 1rem;
+   text-align: center;
+   display:flex;
+   flex-direction: column;
+   background-color: white;
+}
+p{
+    display:block;
+    font-size:1.5rem;
+    font-weight:bold;
+}
+.para-title{
+    position:absolute;
+    bottom:344px;
+}
+.delete{
+    position:relative;
+    top:330px;
+    font-size: 17px;
+    background-color: #1c87c9;
+    color:#f7f7f7;
+
 }
