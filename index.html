@@ -32,7 +32,7 @@
                 </label>
                 <input type = "text" id = "page-count" required>
                 <br>
-               <strong>Read Status: </strong> 
+                <strong>Read Status: </strong> 
                 <select class = "status">
                     <option>Read</option>
                     <option>In progress</option>
@@ -45,6 +45,7 @@
         <div class = "bookValues">
             <div class = "book">
                 <button class = "delete">Delete 🗑️</button>
+                <button onclick = "toogleBook()" class = "read-progress">Book Status</button>
         </div>
     </div>
     <script src = "library.js" defer></script>

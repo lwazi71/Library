@@ -132,3 +132,11 @@ p{
     color:#f7f7f7;
 
 }
+.read-progress{
+    position:relative;
+    top:270px;
+    font-size: 17px;
+    background-color: #1c87c9;
+    color:#f7f7f7;
+
+}
