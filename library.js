@@ -52,6 +52,7 @@ function bookStyling() {
     bookOutline.appendChild(para3);
 
     para4.appendChild(para4Text);
+    para4.classList.add("para-status")
     bookOutline.appendChild(para4);
 
 }
@@ -74,17 +75,15 @@ function addBooktoLibrary(){
     bookValues.style.display = "block";
     console.log(myLibrary)
 }
-function toogleBook() {
-    var a = ["In progress", "Not Read","Read"];
-    let i = 0;
-    let interval = setInterval(() => {
-        para4.innerHTML = a[i];
-        i++;
-        if (i == 3) {
-            clearInterval(interval);
-        }
-    }, 1000);
-}
+bookProgress.addEventListener('click', function(){
+   if(para4.innerHTML == "Status: Not Read")
+   {
+       para4.innerHTML = "Status: Read";
+   }
+   else{
+       para4.innerHTML = "Status: Not Read";
+   }
+})
 bookDelete.addEventListener("click", function(e){
     e.target.parentNode.remove()
     bookValues.style.display = "none";
