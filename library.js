@@ -20,6 +20,7 @@ const para3 = document.createElement("p");
 const para3Text = document.createTextNode("Pages:");
 const para4 = document.createElement("p");
 const para4Text = document.createTextNode("Status:");
+
 window.onload = function() {
     bookValues.style.display = "none";
 }
@@ -87,4 +88,6 @@ bookProgress.addEventListener('click', function(){
 bookDelete.addEventListener("click", function(e){
     e.target.parentNode.remove()
     bookValues.style.display = "none";
+    myLibrary = []
+    console.log(myLibrary)
 })
