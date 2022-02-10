@@ -13,7 +13,7 @@ const bookProgress = document.querySelector(".read-progress");
 const bookOptions = document.querySelector('.status');
 
 const para1 = document.createElement("p");
-const  para1Text = document.createTextNode("Title:");
+const para1Text = document.createTextNode("Title:");
 const para2 = document.createElement("p");
 const para2Text = document.createTextNode("Author:");
 const para3 = document.createElement("p");
@@ -35,7 +35,7 @@ const openBook = () => {
         closeBook();
     })
 };
-newBook.addEventListener("click",openBook);
+newBook.addEventListener("click", openBook);
 
 let myLibrary = [];
 
@@ -55,37 +55,40 @@ function bookStyling() {
     para4.appendChild(para4Text);
     para4.classList.add("para-status")
     bookOutline.appendChild(para4);
-
 }
-function Book(title,author,pages,read){
-     this.title = title;
-     this.author = author;
-     this.pages = pages;
-     this.read = read;
+
+function Book(title, author, pages, read) {
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.read = read;
 }
 bookSumbit.addEventListener("click", addBooktoLibrary);
 
-function addBooktoLibrary(){
+function addBooktoLibrary() {
     bookStyling()
     para1.innerHTML += bookTitle.value;
     para2.innerHTML += bookAuthor.value;
     para3.innerHTML += bookPages.value;
     para4.innerHTML += bookOptions.value;
-    let newBook = new Book(bookTitle.value, bookAuthor.value,bookPages.value, bookOptions.value);
+    let newBook = new Book(bookTitle.value, bookAuthor.value, bookPages.value, bookOptions.value);
     myLibrary.push(newBook);
+    bookForm.onsubmit = e => {
+        e.target.reset();
+    };
+    bookForm.style.display = "none";
     bookValues.style.display = "block";
     console.log(myLibrary)
 }
-bookProgress.addEventListener('click', function(){
-   if(para4.innerHTML == "Status: Not Read")
-   {
-       para4.innerHTML = "Status: Read";
-   }
-   else{
-       para4.innerHTML = "Status: Not Read";
-   }
+
+bookProgress.addEventListener('click', function() {
+    if (para4.innerHTML == "Status: Not Read") {
+        para4.innerHTML = "Status: Read";
+    } else {
+        para4.innerHTML = "Status: Not Read";
+    }
 })
-bookDelete.addEventListener("click", function(e){
+bookDelete.addEventListener("click", function(e) {
     e.target.parentNode.remove()
     bookValues.style.display = "none";
     myLibrary = []
