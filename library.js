@@ -11,6 +11,7 @@ const individualBook = document.querySelector(".book");
 const bookForm = document.getElementById("bookForm");
 const bookProgress = document.querySelector(".read-progress");
 const bookOptions = document.querySelector('.status');
+const bookCard = document.querySelector(".book");
 
 const para1 = document.createElement("p");
 const para1Text = document.createTextNode("Title:");
@@ -36,7 +37,6 @@ const openBook = () => {
     })
 };
 newBook.addEventListener("click", openBook);
-
 let myLibrary = [];
 
 function bookStyling() {
@@ -56,15 +56,12 @@ function bookStyling() {
     para4.classList.add("para-status")
     bookOutline.appendChild(para4);
 }
-
 function Book(title, author, pages, read) {
     this.title = title;
     this.author = author;
     this.pages = pages;
     this.read = read;
 }
-bookSumbit.addEventListener("click", addBooktoLibrary);
-
 function addBooktoLibrary() {
     bookStyling()
     para1.innerHTML += bookTitle.value;
@@ -75,22 +72,22 @@ function addBooktoLibrary() {
     myLibrary.push(newBook);
     bookForm.onsubmit = e => {
         e.target.reset();
+        bookValues.style.display = "block";
     };
     bookForm.style.display = "none";
-    bookValues.style.display = "block";
     console.log(myLibrary)
 }
+bookSumbit.addEventListener("click", addBooktoLibrary);
 
+function removeBooks(){
+    bookCard.parentNode.remove()
+    myLibrary.shift()
+    console.log(myLibrary)
+}
 bookProgress.addEventListener('click', function() {
     if (para4.innerHTML == "Status: Not Read") {
         para4.innerHTML = "Status: Read";
     } else {
         para4.innerHTML = "Status: Not Read";
     }
-})
-bookDelete.addEventListener("click", function(e) {
-    e.target.parentNode.remove()
-    bookValues.style.display = "none";
-    myLibrary = []
-    console.log(myLibrary)
 })
