@@ -126,16 +126,16 @@ p{
 }
 .delete{
     position:relative;
-    top:330px;
     font-size: 17px;
+    margin: 5px;
     background-color: #1c87c9;
     color:#f7f7f7;
 
 }
 .read-progress{
     position:relative;
-    top:270px;
     font-size: 17px;
+    margin: 5px;
     background-color: #1c87c9;
     color:#f7f7f7;
 
