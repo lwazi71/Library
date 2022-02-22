@@ -8,11 +8,9 @@ const bookOutline = document.querySelector(".book");
 const bookForm = document.getElementById("bookForm");
 const bookOptions = document.querySelector('.status');
 const bookCard = document.querySelector(".book");
+const bookTable = document.querySelector(".table");
 let bookSubmit = document.querySelector(".submit");
  
-window.onload = function() {
-    bookValues.style.display = "none";
-}
 const closeBook = () => {
     bookForm.style.display = "none";
 };
@@ -48,41 +46,12 @@ function Book(title, author, pages, read) {
 }
 function displayBooks() {
     for (i = 0; i < myLibrary.array; i++) {
-        createBook(myLibrary[i])
-        para1Text.innerHTML = book.title;
-        para2Text.innerHTML = book.author;
-        para3Text.innerHTML = book.pages;
-        para4Text.innerHTML = book.read;
     }
 }
 
 function createBook() {
-    const para1 = document.createElement("p");
-    const para1Text = document.createTextNode("Title:");
-    const para2 = document.createElement("p");
-    const para2Text = document.createTextNode("Author:");
-    const para3 = document.createElement("p");
-    const para3Text = document.createTextNode("Pages:");
-    const para4 = document.createElement("p");
-    const para4Text = document.createTextNode("Status:");
     const bookProgress = document.createElement("button");
     const bookDelete = document.createElement("button");
-
-    para1.classList.add('para-title');
-    para1.appendChild(para1Text);
-    bookOutline.appendChild(para1);
-
-    para2.classList.add('para-author');
-    para2.appendChild(para2Text);
-    bookOutline.appendChild(para2);
-
-    para3.appendChild(para3Text);
-    para3.classList.add('para-pages');
-    bookOutline.appendChild(para3);
-
-    para4.appendChild(para4Text);
-    para4.classList.add("para-status");
-    bookOutline.appendChild(para4);
 
     bookProgress.classList.add("read-progress");
     bookDelete.classList.add("delete");
@@ -108,15 +77,27 @@ function createBook() {
 }
 
 function addBooktoLibrary() {
-    createBook()
-    displayBooks()
+    newCell()
     let newBook = new Book(bookTitle.value, bookAuthor.value, bookPages.value, bookOptions.value);
     myLibrary.push(newBook);
     bookForm.onsubmit = e => {
         e.target.reset();
-        bookValues.style.display = "block";
-    };
+    }
     bookForm.style.display = "none";
     console.log(myLibrary)
+}
+function newCell(){
+    var row  = bookTable.insertRow(-1);
+    var title  = row.insertCell(0);
+    var author = row.insertCell(1);
+    var pages = row.insertCell(2);
+    var status = row.insertCell(3);
+
+    title.innerHTML = bookTitle.value;
+    author.innerHTML = bookAuthor.value;
+    pages.innerHTML = bookPages.value;
+    status.innerHTML = bookOptions.value;
+
+    return false;
 }
 bookSubmit.addEventListener("click", addBooktoLibrary);
