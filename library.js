@@ -24,18 +24,7 @@ const openBook = () => {
 };
 newBook.addEventListener("click", openBook);
 
-let myLibrary = [{
-        title: "Name of Wind",
-        author: "Patrick Routhfuss",
-        pages: "800",
-        read: "Read"
-    },
-    {
-        title: "Rational Male",
-        author: " Rollo Tomassi",
-        pages: "364",
-        read: "Not Read"
-    }
+let myLibrary = [
 ];
 
 function Book(title, author, pages, read) {
@@ -48,34 +37,6 @@ function displayBooks() {
     for (i = 0; i < myLibrary.array; i++) {
     }
 }
-
-function createBook() {
-    const bookProgress = document.createElement("button");
-    const bookDelete = document.createElement("button");
-
-    bookProgress.classList.add("read-progress");
-    bookDelete.classList.add("delete");
-    bookOutline.appendChild(bookDelete);
-    bookOutline.appendChild(bookProgress);
-
-    bookDelete.innerHTML = "Delete 🗑️";
-    bookProgress.innerHTML = "Book Status";
-
-    bookProgress.addEventListener('click', function() {
-        if (para4.innerHTML == "Status: Not Read") {
-            para4.innerHTML = "Status: Read";
-        } else {
-            para4.innerHTML = "Status: Not Read";
-        }
-    })
-
-    bookDelete.addEventListener('click', function() {
-        bookCard.parentNode.remove()
-        myLibrary.shift()
-        console.log(myLibrary)
-    })
-}
-
 function addBooktoLibrary() {
     newCell()
     let newBook = new Book(bookTitle.value, bookAuthor.value, bookPages.value, bookOptions.value);
@@ -92,12 +53,32 @@ function newCell(){
     var author = row.insertCell(1);
     var pages = row.insertCell(2);
     var status = row.insertCell(3);
+    var btndelete = row.insertCell(4);
+    var btnprogress = row.insertCell(5);
 
     title.innerHTML = bookTitle.value;
     author.innerHTML = bookAuthor.value;
     pages.innerHTML = bookPages.value;
     status.innerHTML = bookOptions.value;
+    btndelete.innerHTML = "<button class = delete>Delete 🗑️</button>";
+    btnprogress.innerHTML = "<button class = read-progress> Book Status</button>"
 
+    btnprogress.addEventListener('click',function(){
+        if (status.innerHTML == "Not Read") {
+            status.innerHTML = "Read";
+        } else {
+            status.innerHTML = "Not Read";
+        }
+    })
+
+    btndelete.addEventListener('click',function(){
+        var td = event.target.parentNode;
+        var tr = td.parentNode;
+        tr.parentNode.removeChild(tr);
+        myLibrary.splice(0,1)
+        console.log(myLibrary)
+
+    })
     return false;
 }
 bookSubmit.addEventListener("click", addBooktoLibrary);
