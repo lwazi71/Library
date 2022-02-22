@@ -9,7 +9,7 @@ const bookForm = document.getElementById("bookForm");
 const bookOptions = document.querySelector('.status');
 const bookCard = document.querySelector(".book");
 let bookSubmit = document.querySelector(".submit");
-
+ 
 window.onload = function() {
     bookValues.style.display = "none";
 }

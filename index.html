@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,9 +10,37 @@
     
 </head>
 <body>
+    <main id = 'site-main'>
+        <div class = 'container'>
+            <div class = 'box-nav d-flex-justify-between'>
+                <span class = 'text-gradient'>New Book<i class = 'fas fa-user'></i></span>
+
+            <form action ="/" method = "POST">
+                <table class = 'table'> 
+                    <thead class = 'thead-dark'> 
+                        <tr>
+                           <th>Title:</th> 
+                            <th>Author:</th> 
+                            <th>Pages:</th> 
+                            <th>Read Status:</th> 
+                        </tr> 
+                    </thead> 
+                        <tr>
+                            <td>Name of Wind</td>
+                            <td> Patrick Rothfuss</td>
+                            <td>662</td>
+                            <td>Yes</td>
+                        </tr>
+                </table>
+            </form>
+        </div>
+    </div>
+    </main>
+
     <div class = 'openBtn'>
         <button onclick = "openBook()"class = " new-book openButton"><strong>New Book</strong></button>
     </div>
+    
     <div class = "loginPopup">
         <div class = "bookPopup" id = "bookForm">
             <form onsubmit="return false;" name = "books" class = "formContainer">
@@ -39,11 +68,6 @@
                 </select>
                 <button type = submit class = "btn submit">Submit</button>
             </form>
-        </div>
-    </div>
-        <div class = "bookValues">
-            <div class = "book">
-                
         </div>
     </div>
     <script src = "library.js" defer></script>

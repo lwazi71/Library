@@ -1,8 +1,4 @@
-body{
-    display:flex;
-    justify-content: center;
-    align-items: center;
-}
+
 *{
     box-sizing: border-box;
 }
@@ -139,4 +135,39 @@ p{
     background-color: #1c87c9;
     color:#f7f7f7;
 
+}
+
+.bookshelf{
+    display: flex;
+    flex-direction: row;
+    flex-wrap:wrap;
+    margin:2rem;
+    width: 800px;
+}
+.bookValues2{
+}
+
+.text-gradient{
+    display: flex;
+    justify-content: center;
+}
+.container{
+    display: flex;
+    justify-content: center;
+}
+#site-main{
+    margin-top:6em;
+}
+#site-main.container form{
+    margin:2em 0;
+}
+table{
+    border-spacing:0px;
+    width:100%;
+}
+.table td, .table th{
+    padding:.75em;
+    vertical-align:top;
+    text-align: center;
+    border-top:1px solid black;
 }
