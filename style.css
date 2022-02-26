@@ -14,6 +14,8 @@
     padding: 14px 20px;
     cursor: pointer;
     position: fixed;
+    bottom:675px;
+
 }
 .loginPopup {
     position: relative;
@@ -27,7 +29,7 @@
 .bookPopup{
     display: none;
     position: fixed;
-    left: 45%;
+    left: 50%;
     top: 5%;
     transform: translate(-50%, 5%);
     border: 2px solid;
@@ -155,6 +157,7 @@ p{
 .text-gradient{
     display: flex;
     justify-content: center;
+    font-size:24px;
 }
 .container{
     display: flex;
@@ -169,6 +172,7 @@ p{
 table{
     border-spacing:0px;
     width:100%;
+    font-size:23px;
 }
 .table td, .table th{
     padding:.75em;
