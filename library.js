@@ -28,12 +28,14 @@ newBook.addEventListener("click", openBook);
 /** Array storing book objects*/
 let myLibrary = [];
 
-/**Constructor of original book*/
-function Book(title, author, pages, read) {
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.read = read;
+/**Class of inital Book*/
+class Book{
+    constructor(title,author,pages,read){
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.read = read;
+    }
 }
 /**Function that adds new book to Table */
 function addBooktoLibrary() {
