@@ -1,5 +1,5 @@
 # Library
-Web based Library, built following TheOdinProject's guidelines(https://www.theodinproject.com/paths/full-stack-javascript/courses/javascript/lessons/library)
+Web based online library
 
 
 https://user-images.githubusercontent.com/50780699/181148467-9e474ebd-3eb9-4586-a9de-8eadbc8dda90.mp4
